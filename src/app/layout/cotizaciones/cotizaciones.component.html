@@ -1,0 +1,141 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Cotización'" [icon]="'fa-copy'"></app-page-header>
+  <div class="imagen-fondo">
+    <!-- <img src="../../../assets/images/rsz_1cotizaciones.jpg" width="100%" height="auto" alt="fondo_cotizaciones" /> -->
+  </div>
+  <div class="container" style="color:black">
+    <h1>Cotización</h1>
+    <p class="text-justify">
+      Nuestro objetivo es lograr que el servicio que brindamos sea el mejor posible, por eso, tenemos a tu disposición varias opciones para
+      que puedas contactarte con nuestro personal tecnico calificado. Haremos lo posible por responderte en el menor tiempo posible.
+    </p>
+    <hr />
+    <div class="row">
+        <div class="col-8">
+          <form>
+            <div class="form-group">
+              <label for="inpuName"><strong>Nombre</strong></label>
+              <input
+                type="name"
+                class="form-control"
+                id="inputName"
+                placeholder="Nombres y Apellidos"
+                [(ngModel)]="cotizaciones.name"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+  
+            <div class="form-group">
+              <label for="inputAddress"><strong>Direccion</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputAddress"
+                placeholder="carrera 11 # 4 - 37"
+                [(ngModel)]="cotizaciones.adress"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputEmail"><strong>Correo</strong></label>
+              <input
+                type="email"
+                class="form-control"
+                id="inputEmail"
+                placeholder="ejemplo@xxxxxx.com"
+                [(ngModel)]="cotizaciones.email"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputPhone"><strong>Celular/Telefono</strong></label>
+              <input
+                type="phone"
+                class="form-control"
+                id="inputPhone"
+                placeholder="+57 3164971035"
+                [(ngModel)]="cotizaciones.phone"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity"><strong>Ciudad</strong></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputCity"
+                  placeholder="Popayán"
+                  [(ngModel)]="cotizaciones.city"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState"><strong>Departamento</strong></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputState"
+                  placeholder="Cauca"
+                  [(ngModel)]="cotizaciones.state"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
+            <hr />
+            <div class="form-group">
+              <label> <strong>Servicios en Oferta:</strong></label>
+              &nbsp;&nbsp;
+              <label class="checkbox-inline"> <input type="checkbox" /> Seguridad Electronica </label>
+              &nbsp;&nbsp;
+              <label class="checkbox-inline"> <input type="checkbox" /> Seguridad Privada </label>
+              &nbsp;&nbsp;
+              <label class="checkbox-inline"> <input type="checkbox" /> Circuito Cerrado de TV (CCTV) </label>
+            </div>
+            <hr />
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1"> <strong>Pregunta o Solicitud</strong></label>
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                [(ngModel)]="cotizaciones.comment"
+                [ngModelOptions]="{ standalone: true }"
+              ></textarea>
+            </div>
+            <!-- <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck" />
+              <label class="form-check-label" for="gridCheck"> Acepto terminos y Condiciones </label>
+            </div>
+          </div> -->
+  
+            <button type="submit" class="btn btn-primary" (click)="guardarCotizacion()">Enviar</button>
+          </form>
+        </div>
+        <div class="col-4" style="text-align: center">
+          <h2>Seguridad del Cauca</h2>
+          <p><strong>Direccion:</strong> Carrera 11 # 4-37. Popayán Cauca</p>
+          <p><strong>Telefono:</strong> (+032) 824 2415</p>
+          <p><strong>Celular:</strong> (+57) 315 895 8690</p>
+          <a
+            href="https://www.google.com/maps/place/Cra.+11+%234-37,+Popay%C3%A1n,+Cauca/@2.4434236,-76.6114172,18z/data=!3m1!4b1!4m5!3m4!1s0x8e300310eeeaa549:0xcb641170c71e5998!8m2!3d2.4434236!4d-76.6103229"
+          >
+            Google Maps
+          </a>
+          <hr />
+          <h3><fa-icon [icon]="faEnvelope"> </fa-icon>  Correo.</h3>
+          <a href="http://www.gmail.com">comercial@seguridaddelcauca.com.co</a>
+          <br />
+          <br />
+          <!-- <button>
+            <a
+              href="https://www.google.com/maps/place/Cra.+11+%234-37,+Popay%C3%A1n,+Cauca/@2.4434236,-76.6114172,18z/data=!3m1!4b1!4m5!3m4!1s0x8e300310eeeaa549:0xcb641170c71e5998!8m2!3d2.4434236!4d-76.6103229"
+            >
+            </a>
+          </button> -->
+          <!-- <img src="../../assets/images/mapa.JPG" height="auto" width="90%" href="http://www.google.com" /> -->
+        </div>
+      </div>
+</div>
+</div>

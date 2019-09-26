@@ -1,0 +1,53 @@
+.footer {
+    color: black;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+  }
+.fondo-quienessomos{
+  padding: 50px 40px 0px 40px;
+}
+  .fondo-sve{
+    padding: 20px 0px 2px 15px;
+    height: auto;
+    width: 100%;
+  }
+  .footer img {
+    vertical-align: middle;
+  }
+  
+  .footer a {
+    color:black;
+  }
+
+  .submenu2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 90px;
+    background: white;
+    color: black;
+    border-radius: 0%;
+    position: fixed;
+    right:  65px;
+    bottom: 465px;
+    font-size: 1em;
+}
+.submenu3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 90px;
+  background: white;
+  color: black;
+  border-radius: 0%;
+  position: fixed;
+  right:  225px;
+  bottom: 430px;
+  font-size: 1em;
+}

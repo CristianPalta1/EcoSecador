@@ -1,0 +1,138 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Personal'" [icon]="'fa-database'"></app-page-header>
+  <div class="container text-center ">
+    <h1>Aspirantes seguridad del cauca</h1>
+
+    <div class="row">
+      <div class="col col-lg-6">
+        <a (click)="action = 'create'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+          Agregar Personal.
+        </a>
+      </div>
+
+      <div class="col col-lg-6">
+        <a routerLink="/login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+          Borrar Personal
+        </a>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="container text-center" *ngIf="action === 'list'">
+    <div *ngFor="let trabajador of personal">
+      <li class="list-group-item">{{ trabajador.name }}</li>
+    </div>
+  </div>
+
+  <div class="container text-center" *ngIf="action === 'create'">
+    <div class="container text-center">
+      <h1>{{ title }} Registro aspirante guardia</h1>
+      <hr />
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <!-- <figure>
+            <img src="../../../assets/images/logo.jpeg" height="auto" width="100%" alt="Logo de eurekatechnology" />
+          </figure> -->
+        </div>
+        <div class="col-6">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputNombre">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputName"
+                placeholder="Nombre"
+                [(ngModel)]="personalRegistro.name"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputlastname">Apellido</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputLastname"
+                placeholder="Apellido"
+                [(ngModel)]="personalRegistro.lastname"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputDireccion">Direcccion</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputDireccion"
+              placeholder="1234 Calle Falsa"
+              [(ngModel)]="personalRegistro.adress"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputemail">Correo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputEmail"
+              placeholder="ejemplo@xxxxx.com"
+              [(ngModel)]="personalRegistro.email"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">Ciudad</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputCity"
+                [(ngModel)]="personalRegistro.city"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputState">Departamento</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputState"
+                [(ngModel)]="personalRegistro.state"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputTelefono">Telefono</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputTelefono"
+                placeholder="316 687 3221"
+                [(ngModel)]="personalRegistro.phone"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="inputAge">Edad</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputAge"
+                [(ngModel)]="personalRegistro.age"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" (click)="guardarPersonal()">
+            Aceptar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

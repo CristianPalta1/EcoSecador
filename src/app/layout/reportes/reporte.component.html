@@ -1,0 +1,103 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Reportes'" [icon]="'fa-database'"></app-page-header>
+  <div class="card text-center" style="border-color: navy">
+    <div class="card-header" style=" background-color: gray"><strong> Soporte Tecnico</strong></div>
+    <div class="card-body">
+      <table class="table">
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Solicitud</th>
+        </tr>
+        <tr *ngFor="let soporte of serviTecnico">
+          <td>{{ soporte.id }}</td>
+          <td>{{ soporte.name }} {{ soporte.lastname }}</td>
+          <td>{{ soporte.email }}</td>
+          <td class="text-justify">{{ soporte.comment }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <hr />
+
+  <div class="card text-center" style="border-color: navy">
+    <div class="card-header" style=" background-color: gray"><strong> Temperatura</strong></div>
+    <div class="card-body">
+      <table class="table">
+        <tr>
+          <th>#</th>
+          <th>Datos</th>
+          
+        </tr>
+        <tr >
+          
+          <td>{{ stringTemp }} 
+        </tr>
+      </table>
+    </div>
+  </div>
+  <hr />
+
+  <div class="card text-center" style="border-color: navy">
+    <div class="card-header" style=" background-color: gray"><strong> Aspirante Guardia </strong></div>
+    <div class="card-body">
+      <table class="table">
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Direccion</th>
+          <th>Telefono</th>
+        </tr>
+        <tr *ngFor="let aspirante of guardias">
+          <td>{{ aspirante.id }}</td>
+          <td>{{ aspirante.name }} {{ aspirante.lastname }}</td>
+          <td>{{ aspirante.adress }}</td>
+          <td>{{ aspirante.phone }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="card text-center" style="border-color: navy">
+    <div class="card-header" style=" background-color: gray"><strong> Usuarios Registrados </strong></div>
+    <div class="card-body">
+      <table class="table">
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Telefono</th>
+        </tr>
+        <tr *ngFor="let usuarios of registro">
+          <td>{{ usuarios.id }}</td>
+          <td>{{ usuarios.name }} {{ usuarios.lastname }}</td>
+          <td>{{ usuarios.email }}</td>
+          <td>{{ usuarios.phone }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+<hr />
+  <div class="card text-center" style="border-color: navy">
+      <div class="card-header" style=" background-color: gray"><strong> Cotizaciones </strong></div>
+      <div class="card-body">
+        <table class="table">
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+          </tr>
+          <tr *ngFor="let cotizacion of cotizaciones">
+            <td>{{ cotizacion.id }}</td>
+            <td>{{ cotizacion.name }}</td>
+            <td>{{ cotizacion.email }}</td>
+            <td>{{ cotizacion.phone }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+</div>
