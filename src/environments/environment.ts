@@ -12,7 +12,7 @@ export const environment = {
     storageBucket: 'ecosecador-dde4a.appspot.com',
     messagingSenderId: '489239391941',
   },
-  // apiurl: 'http://localhost:3000'
+  apiurl: 'http://localhost:3000'
 };
 
 /*

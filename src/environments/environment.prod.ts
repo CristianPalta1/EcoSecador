@@ -8,5 +8,5 @@ export const environment = {
     storageBucket: 'ecosecador-dde4a.appspot.com',
     messagingSenderId: '489239391941',
   },
-  // apiurl: 'http://13.82.135.133'
+  apiurl: 'http://40.71.32.139'
 };

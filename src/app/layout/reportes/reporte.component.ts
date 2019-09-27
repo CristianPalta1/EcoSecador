@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Usuarios } from '../../interfaces/usuarios';
 import { Tecnico } from '../../interfaces/servicioTecnico';
-import { DatosTemp } from '../../interfaces/Temp';
+// import { DatosTemp } from '../../interfaces/temp';
 import { Personas } from '../../interfaces/personas';
 // import { TecnicosServices } from 'src/app/services/tecnico.service';
 import { RegistroServices } from 'src/app/services/registro.service';
@@ -21,11 +21,14 @@ export class ReporteComponent implements OnInit {
     registro: Usuarios[];
     serviTecnico: Tecnico [];
     datosESP32: any;
+    datosTempBD: any;
     guardias: Personas[];
     cotizaciones: Cotizacion[];
 
     temperatura: any;
+    datoMongo: any;
     stringTemp: any;
+    intMongoTemp: any;
 
     // private guardiaService: PersonalServices, private singupService: RegistroServices, private cotizacionService: CotizacionServices
     // tslint:disable-next-line:max-line-length
@@ -39,6 +42,19 @@ export class ReporteComponent implements OnInit {
           // console.log(this.stringTemp);
           }, ( error ) => {
             console.log('ING. OCURRIO ESTE ERROR', error);
+        });
+
+        // Aqui utilizo 2 funciones. una para devolver datos y otra para el error.
+        // Para que el servicio pueda subscibirse debo tener en la funcion getDBTemp un return en la funcion
+        // que obtiene los datos de la BD
+        this.temperaturasService.getDBTemperatura().subscribe((data: any[]) => {
+            console.log(data);
+            this.datosTempBD = data;
+            this.datoMongo = this.datosTempBD[0].temperatura;
+            this.intMongoTemp = parseFloat(this.datoMongo);
+            console.log(this.intMongoTemp);
+        }, (error) => {
+            console.log('Ing. Ocurrio un error', error);
         });
         /// De esta manera muestro los datos desde la bd
         /*this.guardiaService.getPersonal().subscribe( (infoPersonal: Personas[]) => {

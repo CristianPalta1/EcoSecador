@@ -1,5 +1,6 @@
-export interface DatosTemp {
-    Datos?: any;
+export interface Datostemp {
+    id?: any;
+    temperatura?: any;
 }
 
 
