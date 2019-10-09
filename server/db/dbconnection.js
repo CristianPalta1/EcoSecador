@@ -7,7 +7,7 @@ module.exports = {
         //asi se puede verificar si se hizo el proceso o no
         await mongo.connect('mongodb://localhost:27017/DBecosecador',{ useNewUrlParser: true });
         app.listen(3000, () => {
-            console.log('Ing. Cp im initialized on port 3000');
+            console.log('Ing. Cp inicialice en el puerto 3000');
         });
     }
 }
